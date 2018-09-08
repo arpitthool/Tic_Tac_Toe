@@ -1,5 +1,6 @@
-
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -26,6 +27,70 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
     public Tic_Tac_Toe() {
         initComponents();
         int turn = 0;
+    }
+
+    private List get_neighbours( int[] board){
+        List neighbours = new ArrayList();
+        if( btn_0.isEnabled()){
+            neighbours.add(0);
+        }
+        if( btn_1.isEnabled()){
+            neighbours.add(1);
+        }
+        if( btn_2.isEnabled()){
+            neighbours.add(2);
+        }
+        if( btn_3.isEnabled()){
+            neighbours.add(3);
+        }
+        if( btn_4.isEnabled()){
+            neighbours.add(4);
+        }
+        if( btn_5.isEnabled()){
+            neighbours.add(5);
+        }
+        if( btn_6.isEnabled()){
+            neighbours.add(6);
+        }
+        if( btn_7.isEnabled()){
+            neighbours.add(7);
+        }
+        if( btn_8.isEnabled()){
+            neighbours.add(8);
+        }
+        return neighbours;
+    }
+    
+    private boolean check_draw( ){
+        
+        if( btn_0.isEnabled()){
+            return false;
+        }
+        if( btn_1.isEnabled()){
+            return false;
+        }
+        if( btn_2.isEnabled()){
+            return false;
+        }
+        if( btn_3.isEnabled()){
+            return false;
+        }
+        if( btn_4.isEnabled()){
+            return false;
+        }
+        if( btn_5.isEnabled()){
+            return false;
+        }
+        if( btn_6.isEnabled()){
+            return false;
+        }
+        if( btn_7.isEnabled()){
+            return false;
+        }
+        if( btn_8.isEnabled()){
+            return false;
+        }
+        return true;
     }
     
     private void close(){
@@ -368,6 +433,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             this.board[0] = -1;
         }
         btn_0.setEnabled(false);
+        if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -407,6 +476,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             this.board[1] = -1;
         }
         btn_1.setEnabled(false);
+        if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -434,6 +507,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             this.board[2] = -1;
         }
          btn_2.setEnabled(false);
+         if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -461,6 +538,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             this.board[3] = -1;
         }
          btn_3.setEnabled(false);
+         if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -487,7 +568,12 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             btn_4.setIcon(cross);
             this.board[4] = -1;
         }
+        
          btn_4.setEnabled(false);
+         if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -515,6 +601,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             this.board[5] = -1;
         }
          btn_5.setEnabled(false);
+         if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -542,6 +632,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
                 this.board[6] = -1;
             }
         btn_6.setEnabled(false);
+        if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
                 if(this.find_winner(this.board) == 1){
                     JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -569,6 +663,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             this.board[7] = -1;
         }
           btn_7.setEnabled(false);
+          if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -596,6 +694,10 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             this.board[8] = -1;
         }
          btn_8.setEnabled(false);
+         if(this.check_draw()){
+             JOptionPane.showMessageDialog(null, "It's a Draw!");
+             this.refresh();
+         }
         if(this.find_winner(this.board) != 0){
             if(this.find_winner(this.board) == 1){
                 JOptionPane.showMessageDialog(null, "Player One Wins!");
@@ -603,7 +705,7 @@ public class Tic_Tac_Toe extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(null, "Player Two Wins!");
-                this.refresh();
+                this.refresh(); 
             }
         }
          
